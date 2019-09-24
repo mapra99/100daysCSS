@@ -21,7 +21,6 @@
     transform: rotate(45deg);
   }
 }
-
 @keyframes move-down {
   50% {
     transform: translateY(3px);
@@ -30,6 +29,32 @@
   100% {
     transform-origin: 4px -2.5px;
     transform: rotate(-45deg);
+  }
+}
+@keyframes appear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes moveback-up {
+  0% {
+    transform: translateY(-3px);
+  }
+  1%{
+    transform-origin: 4px 2.5px;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    transform-origin: 4px 2.5px;
+    transform: rotate(-45deg);
+  }
+
+  100% {
+    transform: translateY(3px);
   }
 }
 
@@ -73,11 +98,15 @@ body {
 .dissapear-on-click {
   animation: dissapear 1s 1 normal forwards;
 }
-
 .moveup-on-click {
   animation: move-up 750ms 1 normal forwards;
 }
-
 .movedown-on-click {
   animation: move-down 750ms 1 normal forwards;
+}
+.appear-on-click {
+  animation: appear 1s 1 normal forwards;
+}
+.movebackup-on-click {
+  animation: moveback-up 750ms 1 normal forwards;
 }
