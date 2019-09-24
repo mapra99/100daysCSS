@@ -61,16 +61,13 @@ body {
 }
 
 .dissapear-on-click {
-  animation-duration: 1s;
-  animation-name: dissapear;
+  animation: dissapear 1s 1 normal forwards;
 }
 
 .moveup-on-click {
-  animation-duration: 750ms;
-  animation-name: move-up;
+  animation: move-up 750ms 1 normal forwards;
 }
 
 .movedown-on-click {
-  animation-duration: 750ms;
-  animation-name: move-down;
+  animation: move-down 750ms 1 normal forwards;
 }
