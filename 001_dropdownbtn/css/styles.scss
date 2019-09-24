@@ -50,9 +50,11 @@ body {
   stroke-linecap: round;
 }
 
-.anchor:active{
-  .mid-line{
+.anchor{
+  height: 100px;
+}
+
+.anchor:focus{
     animation-duration: 1s;
     animation-name: dissapear;
-  }
 }
