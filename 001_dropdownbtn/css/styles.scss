@@ -12,14 +12,24 @@
   }
 }
 @keyframes move-up {
-  100% {
+  50% {
     transform: translateY(-3px);
+  }
+
+  100% {
+    transform-origin: 50% 0;
+    transform: rotate(45deg);
   }
 }
 
 @keyframes move-down {
-  100% {
+  50% {
     transform: translateY(3px);
+  }
+
+  100% {
+    transform-origin: 50% 0;
+    transform: rotate(-45deg);
   }
 }
 
