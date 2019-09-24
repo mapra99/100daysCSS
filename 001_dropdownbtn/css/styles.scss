@@ -1,9 +1,8 @@
 // delete the following line if no text is used
 // edit the line if you wanna use other fonts
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@include url(https://fonts.googleapis.com/css?family=Open+Sans:700,300); // use only the available space inside the 400x400 frame
 
-// use only the available space inside the 400x400 frame
-body{
+body {
   margin: 0;
   padding: 0;
 }
@@ -14,12 +13,12 @@ body{
   width: 400px;
   height: 400px;
   border-radius: 2px;
-	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
-	overflow: hidden;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
   color: #333;
-	font-family: 'Open Sans', Helvetica, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   align-items: center;
   align-content: center;
 }
