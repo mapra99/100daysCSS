@@ -17,6 +17,15 @@
   }
 }
 
+@keyframes move-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -57,4 +66,9 @@ body {
 .dissapear-on-click{
     animation-duration: 1s;
     animation-name: dissapear;
+}
+
+.moveup-on-click{
+    animation-duration: 1s;
+    animation-name: move-up;
 }
