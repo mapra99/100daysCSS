@@ -30,3 +30,8 @@ body {
 .center {
   @include flex-center;
 }
+
+.icon-cont{
+  width: 100px;
+  height: 100px;
+}
