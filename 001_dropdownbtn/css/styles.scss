@@ -1,26 +1,17 @@
 // delete the following line if no text is used
 // edit the line if you wanna use other fonts
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300); // use only the available space inside the 400x400 frame
-
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 @keyframes dissapear {
-  0% {
-    transform: scale(1);
-  }
   100% {
     transform: scale(0);
   }
 }
-
 @keyframes move-up {
-  0% {
-    transform: translateY(0);
-  }
   100% {
     transform: translateY(-3px);
   }
@@ -49,26 +40,26 @@ body {
   @include flex-center;
 }
 
-.icon-cont{
+.icon-cont {
   width: 100px;
   height: 100px;
 }
 
-.icon-line{
+.icon-line {
   stroke: #EEEBD3;
   stroke-linecap: round;
 }
 
-.anchor{
+.anchor {
   height: 100px;
 }
 
-.dissapear-on-click{
-    animation-duration: 1s;
-    animation-name: dissapear;
+.dissapear-on-click {
+  animation-duration: 1s;
+  animation-name: dissapear;
 }
 
-.moveup-on-click{
-    animation-duration: 750ms;
-    animation-name: move-up;
+.moveup-on-click {
+  animation-duration: 750ms;
+  animation-name: move-up;
 }
