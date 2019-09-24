@@ -1,6 +1,6 @@
 var iconState = true;
 
-function addDissapear() {
+function handleAnimations() {
   var midLine = document.getElementById("mid-line");
   var botLine = document.getElementById("bot-line");
   var topLine = document.getElementById("top-line");
