@@ -6,8 +6,8 @@ function handleAnimations() {
   var topLine = document.getElementById("top-line");
   if(iconState){
     midLine.classList.remove("appear-on-click");
-    botLine.classList.remove("moveback-on-click");
-    topLine.classList.remove("moveback-on-click");
+    botLine.classList.remove("movebackdown-on-click");
+    topLine.classList.remove("movebackup-on-click");
 
     midLine.classList.add("dissapear-on-click");
     botLine.classList.add("moveup-on-click");
@@ -18,8 +18,8 @@ function handleAnimations() {
     topLine.classList.remove("movedown-on-click");
 
     midLine.classList.add("appear-on-click");
-    botLine.classList.add("moveback-on-click");
-    topLine.classList.add("moveback-on-click");
+    botLine.classList.add("movebackdown-on-click");
+    topLine.classList.add("movebackup-on-click");
   }
   iconState = !iconState;
 }
