@@ -19,12 +19,12 @@ body {
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  justify-content: center;
   align-items: center;
-  align-content: center;
 }
 
 .center {
   display: flex;
+  justify-content: center;
   align-items: center;
-  align-content: center;
 }
