@@ -1,29 +1,133 @@
 // delete the following line if no text is used
 // edit the line if you wanna use other fonts
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300); // use only the available space inside the 400x400 frame
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes dissapear {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes move-up {
+  50% {
+    transform: translateY(-3px);
+  }
 
-// use only the available space inside the 400x400 frame
+  100% {
+    transform-origin: 4px 2.5px;
+    transform: rotate(45deg);
+  }
+}
+@keyframes move-down {
+  50% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    transform-origin: 4px -2.5px;
+    transform: rotate(-45deg);
+  }
+}
+@keyframes appear {
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes move-backup {
+  0% {
+    transform: translateY(3px);
+    transform-origin: 4px -2.5px;
+    transform: rotate(-45deg);
+  }
+
+  50% {
+    transform-origin: 50% 50%;
+    transform: rotate(45deg);
+  }
+
+  100%{
+    transform: none;
+  }
+}
+
+@keyframes move-backdown {
+  0% {
+    transform: translateY(-3px);
+    transform-origin: 4px 2.5px;
+    transform: rotate(45deg);
+  }
+
+  50% {
+    transform-origin: 70% 70%;
+    transform: rotate(-45deg);
+  }
+
+  100%{
+    transform: none;
+  }
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .frame {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  background-color: #437C90;
   width: 400px;
   height: 400px;
-  margin-top: -200px;
-  margin-left: -200px;
   border-radius: 2px;
-	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
-	overflow: hidden;
-  background: #fff;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
   color: #333;
-	font-family: 'Open Sans', Helvetica, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include flex-center;
 }
 
 .center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  @include flex-center;
+}
+
+.icon-cont {
+  width: 100px;
+  height: 100px;
+}
+
+.icon-line {
+  stroke: #EEEBD3;
+  stroke-linecap: round;
+}
+
+.anchor {
+  height: 100px;
+}
+
+.dissapear-on-click {
+  animation: dissapear 1s 1 normal forwards;
+}
+.moveup-on-click {
+  animation: move-up 750ms 1 normal forwards;
+}
+.movedown-on-click {
+  animation: move-down 750ms 1 normal forwards;
+}
+.appear-on-click {
+  transform: scale(0);
+  animation: appear 1s 1 normal forwards;
+}
+.movebackup-on-click {
+
+  animation: move-backup 2s 1 normal;
+}
+.movebackdown-on-click {
+  animation: move-backdown 2s 1 normal;
 }
