@@ -26,5 +26,9 @@ body {
 }
 
 .center {
-  @include flex-center;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: blue;
+  z-index: 10;
 }

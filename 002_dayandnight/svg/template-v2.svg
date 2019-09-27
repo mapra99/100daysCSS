@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.3475"
-     inkscape:cx="106.87827"
-     inkscape:cy="95.005052"
+     inkscape:zoom="1.9056528"
+     inkscape:cx="84.151263"
+     inkscape:cy="70.751685"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -99,11 +99,17 @@
        d="M 43.299012,278.34686 58.20833,279.80208 8.4224043,278.34686 Z"
        id="path4712"
        inkscape:connector-curvature="0" />
+    <path
+       transform="translate(0,1.2291667e-6)"
+       style="display:inline;fill:#272c34;fill-opacity:1;stroke:none;stroke-width:0.1457165;stroke-opacity:1"
+       d="m -2e-7,244.08333 v 26.45833 A 26.458333,26.458333 0 0 1 26.458333,244.08333 Z m 26.4583332,0 a 26.458333,26.458333 0 0 1 26.458333,26.45833 v -26.45833 z m 26.458333,26.45833 a 26.458333,26.458333 0 0 1 -1.178221,7.80521 26.458333,26.458333 0 0 1 -25.280112,18.65312 H 52.916666 Z M 26.458333,296.99999 A 26.458333,26.458333 0 0 1 1.2061278,278.34687 26.458333,26.458333 0 0 1 -2e-7,270.54166 v 26.45833 z"
+       id="path4602"
+       inkscape:connector-curvature="0" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="Layer 2"
-     style="display:inline"
+     style="display:none"
      transform="translate(0,-52.916667)" />
 </svg>
