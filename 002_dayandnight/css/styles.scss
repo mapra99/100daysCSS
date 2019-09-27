@@ -1,6 +1,5 @@
 // delete the following line if no text is used
 // edit the line if you wanna use other fonts
-
 body {
   margin: 0;
   padding: 0;
@@ -28,4 +27,45 @@ body {
   border-radius: 50%;
   background-color: blue;
   z-index: 10;
+}
+
+//Initial Colors
+$colors: (
+  left_piramid: #f9ffa8,
+  right_piramid: #dbdccb,
+  shadow: #b38a1c,
+  background: #272c34
+);
+
+//Initial Paths
+$path_shadow: (
+    point1_x: 43.299012,
+     point1_y: 278.34686,
+     point2_x: 58.20833,
+     point2_y: 279.80208,
+     point3_x: 8.4224043,
+     point3_y: 278.34686
+);
+ $shadow_full_path: "M #{map-get($path_shadow, point1_x)},#{map-get($path_shadow, point1_y)}
+ #{map-get($path_shadow, point2_x)},#{map-get($path_shadow, point2_y)}
+ #{map-get($path_shadow, point3_x)},#{map-get($path_shadow, point3_y)} Z";
+
+$path_sun: (
+  cx: -5.2916665,
+  cy: 278.34683
+);
+
+//Setting initial Values
+.left-piramid {fill: map-get($colors, left_piramid);}
+.right-piramid {fill: map-get($colors, right_piramid);}
+.shadow {fill: map-get($colors, shadow);}
+.background {fill: map-get($colors, background);}
+
+.sun {
+  cx: map-get($path_sun, cx);
+  cy: map-get($path_sun, cy);
+}
+
+.shadow {
+  d: path($shadow_full_path);
 }
