@@ -1,10 +1,5 @@
 // delete the following line if no text is used
 // edit the line if you wanna use other fonts
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 body {
   margin: 0;
@@ -22,7 +17,9 @@ body {
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @include flex-center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .center {
