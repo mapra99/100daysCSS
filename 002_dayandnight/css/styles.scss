@@ -73,11 +73,33 @@ $path_sun: (
 //Calculation of Sun trajectory parameters
 $d: 52.916665/2 - map-get($path_sun, cx);
 $h: 34.26354 - 17.636/2;
-$r: ($x**2 + $h**2)/2/$h;
+$r: ($d*$d + $h*$h)/2/$h;
 $m: $r - 52.916665/2;
 
 @function pi() {
   @return 3.14159265359;
+}
+@function pow($number, $exp) {
+  $value: 1;
+  @if $exp > 0 {
+    @for $i from 1 through $exp {
+      $value: $value * $number;
+    }
+  } @else if $exp < 0 {
+    @for $i from 1 through -$exp {
+      $value: $value / $number;
+    }
+  }
+  @return $value;
+}
+@function fact($number) {
+  $value: 1;
+  @if $number > 0 {
+    @for $i from 1 through $number {
+      $value: $value * $i;
+    }
+  }
+  @return $value;
 }
 
 @function rad($angle) {
@@ -112,4 +134,31 @@ $m: $r - 52.916665/2;
 
 @function tan($angle) {
   @return sin($angle) / cos($angle);
+}
+
+@keyframes sun_move {
+  $theta: 0;
+  $perc: 0;
+  $x_actual: $r*cos($theta);
+  $y_actual: $r*sin($theta) - $m;
+  0%{
+    transform: translate($x_actual - map-get($path_sun,cx),$y_actual - map-get($path_sun,cy));
+  }
+  $theta: 36;
+  $perc: 1/(360/36)*100;
+  @while $theta <= 360 {
+    $x_nuevo: $r*cos($theta);
+    $y_nuevo: $r*sin($theta) - $m;
+    #{$perc}% {
+      transform: translate($x_nuevo - $x_actual, $y_nuevo - $y_actual);
+    }
+    $x_actual: $x_nuevo;
+    $y_actual: $y_nuevo;
+    $theta: $theta + 36;
+    $perc: $perc + 1/(360/36)*100;
+  }
+}
+
+.sun{
+  animation: sun_move 10s infinite;
 }
