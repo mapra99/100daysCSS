@@ -2,11 +2,6 @@ $shadow_full_path: "M #{map-get($path_shadow, point1_x)},#{map-get($path_shadow,
 #{map-get($path_shadow, point2_x)},#{map-get($path_shadow, point2_y)}
 #{map-get($path_shadow, point3_x)},#{map-get($path_shadow, point3_y)} Z";
 
-$path_sun: (
- cx: -5.2916665,
- cy: 278.34683
-);
-
 //Setting initial Values
 .left-piramid {fill: map-get($colors, left_piramid);}
 .right-piramid {fill: map-get($colors, right_piramid);}
