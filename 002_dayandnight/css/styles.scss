@@ -103,13 +103,7 @@ $m: $r - 52.916665/2;
 }
 
 @function rad($angle) {
-  $unit: unit($angle);
-  $unitless: $angle / ($angle * 0 + 1);
-  // If the angle has 'deg' as unit, convert to radians.
-  @if $unit == deg {
-    $unitless: $unitless / 180 * pi();
-  }
-  @return $unitless;
+  @return $angle*pi()/180;
 }
 
 @function sin($angle) {
@@ -135,30 +129,21 @@ $m: $r - 52.916665/2;
 @function tan($angle) {
   @return sin($angle) / cos($angle);
 }
-
 @keyframes sun_move {
-  $theta: 0;
+  $theta:0;
   $perc: 0;
-  $x_actual: $r*cos($theta);
-  $y_actual: $r*sin($theta) - $m;
-  0%{
-    transform: translate($x_actual - map-get($path_sun,cx),$y_actual - map-get($path_sun,cy));
-  }
-  $theta: 36;
-  $perc: 1/(360/36)*100;
   @while $theta <= 360 {
-    $x_nuevo: $r*cos($theta);
-    $y_nuevo: $r*sin($theta) - $m;
+    $x: $r * cos($theta);
+    $y: $r * sin($theta) - $m;
     #{$perc}% {
-      transform: translate($x_nuevo - $x_actual, $y_nuevo - $y_actual);
+      cx: $x + 52.916665/2;
+      cy: $y + 294.08332;
     }
-    $x_actual: $x_nuevo;
-    $y_actual: $y_nuevo;
-    $theta: $theta + 36;
-    $perc: $perc + 1/(360/36)*100;
+    $theta: $theta + 9;
+    $perc: $perc + 1/(360/9)*100;
   }
 }
 
 .sun{
-  animation: sun_move 10s infinite;
+  animation: sun_move 7s infinite linear;
 }
