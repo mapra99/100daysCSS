@@ -1,4 +1,6 @@
 //Calculation of Sun trajectory parameters
+@import "trigonometry";
+
 $d: 52.916665/2 - map-get($path_sun, cx);
 $h: 34.26354 - 17.636/2;
 $r: ($d*$d + $h*$h)/2/$h;
@@ -12,7 +14,7 @@ $m: $r - 52.916665/2;
     $y: $r * sin($theta) - $m;
     #{$perc}% {
       cx: $x + 52.916665/2;
-      cy: $y + 294.08332;
+      cy: $y + 50;
     }
     $theta: $theta + 9;
     $perc: $perc + 1/(360/9)*100;
