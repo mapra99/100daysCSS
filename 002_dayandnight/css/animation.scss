@@ -1,26 +1,18 @@
 //Calculation of Sun trajectory parameters
 @import "trigonometry";
+@import "init_vbles";
 
-$d: 52.916665/2 - map-get($path_sun, cx);
-$h: 34.26354 - 17.636/2;
-$r: ($d*$d + $h*$h)/2/$h;
-$m: $r - 52.916665/2;
+$width: 52.916665;
+$height: 52.91667;
 
-@keyframes sun_move {
-  $theta:0;
-  $perc: 0;
-  @while $theta <= 360 {
-    $x: $r * cos($theta);
-    $y: $r * sin($theta) - $m;
-    #{$perc}% {
-      cx: $x + 52.916665/2;
-      cy: $y + 50;
-    }
-    $theta: $theta + 9;
-    $perc: $perc + 1/(360/9)*100;
-  }
-}
+$h_sky: 34.26354;
+$h_pyram: 16.6278;
+$d_sp: ($h_sky - $h_pyram)/2;
+$d_sun: map-get($path_sun, cx);
 
-.sun{
-  animation: sun_move 7s infinite linear;
-}
+$A: pow($d_sp, 2) + 2 * $d_sp * $h_pyram + pow($h_pyram, 2);
+$d_c: (pow($width / 2 + $d_sun, 2) - $A)/2/($d_sp + $h_pyram);
+
+$r_sun: $d_sp + $h_pyram + $d_c;
+$cy_sun: $r_sun;
+$cx_sun: $width/2;
