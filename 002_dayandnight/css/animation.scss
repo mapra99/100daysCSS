@@ -8,11 +8,31 @@ $height: 52.91667;
 $h_sky: 34.26354;
 $h_pyram: 16.6278;
 $d_sp: ($h_sky - $h_pyram)/2;
-$d_sun: map-get($path_sun, cx);
+$d_sun: map-get($path_sun, cx) * -1;
 
 $A: pow($d_sp, 2) + 2 * $d_sp * $h_pyram + pow($h_pyram, 2);
 $d_c: (pow($width / 2 + $d_sun, 2) - $A)/2/($d_sp + $h_pyram);
 
 $r_sun: $d_sp + $h_pyram + $d_c;
-$cy_sun: $r_sun;
+$cy_sun: $r_sun + $d_sp;
 $cx_sun: $width/2;
+
+@keyframes sun_move {
+  $theta:0;
+  $perc: 0;
+  $delta_theta: 9;
+  @while $theta <= 360 {
+    $x: $r_sun * cos($theta) + $cx_sun;
+    $y: $r_sun * sin($theta) + $cy_sun;
+    #{$perc}% {
+      cx: $x;
+      cy: $y;
+    }
+    $theta: $theta + $delta_theta;
+    $perc: $perc + $delta_theta / 360 * 100;
+  }
+}
+
+.sun{
+  animation: sun_move 7s infinite linear;
+}
